@@ -1,0 +1,22 @@
+# Discord 全量域名规则集 (2026-10-29 建)
+# 用途: 两字段格式, provider policy 生效 (🚀 节点选择)
+# 来源: Loyalsoldier/clash-rules proxy.txt (release, 2026-10-29 拉取)
+#       + DNS 实测 (alidns DoH) + 代理工具社区报告
+# 纠错记录 (2026-10-29):
+#   - 剔除 discord-attachments.com (NXDOMAIN, 不存在; 真实上传走 GCS bucket)
+#   - 剔除 d1t9imgtzyh87m.cloudfront.net (CF 分发已退役)
+#   - 剔除 media1.discord.net (NXDOMAIN, 2018-2020 遗留)
+#   - 剔除 disco.gg / prismic.io / prism-break.org (非 Discord)
+#   - 补全 prism.chat (Discord 新 WS/API 基础设施, apex 在 Cloudflare 实测确认)
+#   - 补全 zork.vip (语音服务器, 社区报告, 子域为临时名, 用 SUFFIX 覆盖)
+rules:
+- DOMAIN-SUFFIX,discord.com
+- DOMAIN-SUFFIX,discord.gg
+- DOMAIN-SUFFIX,discord.co
+- DOMAIN-SUFFIX,discord.media
+- DOMAIN-SUFFIX,discordapp.com
+- DOMAIN-SUFFIX,discordapp.net
+- DOMAIN-SUFFIX,prism.chat
+- DOMAIN-SUFFIX,zork.vip
+- DOMAIN,discord-attachments-uploads-prd.storage.googleapis.com
+- DOMAIN-KEYWORD,discord
