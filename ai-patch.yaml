@@ -1,0 +1,7 @@
+# OpenAI App SDK 补丁：公开 AI 规则集（VPSDance/jinxinkai/ACL4SSR 等）均未覆盖的 GPT app 配套域名
+# 20261106: revenuecat(订阅SDK) / socure(身份验证) / openaiassets(静态资源, KEYWORD 兜住 z19.web 等全变体)
+# 直连时这些域名只下发叶子证书（Amazon CA），Android/macOS 均验证失败 → 必须走节点
+rules:
+  - DOMAIN-SUFFIX,revenuecat.com
+  - DOMAIN-SUFFIX,socure.io
+  - DOMAIN-KEYWORD,openaiassets
